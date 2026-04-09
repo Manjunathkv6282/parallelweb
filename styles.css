@@ -2318,6 +2318,19 @@ a, .menu-icon, button {
         max-width: 650px; /* Center the form on tablets */
         margin: 0 auto;
     }
+
+        .contact-grid {
+        grid-template-columns: 1fr !important; 
+        gap: 50px;
+    }
+
+    .contact-info-column {
+        text-align: center; /* Better look for mobile */
+    }
+
+    .info-card-3d {
+        transform: none !important; /* Remove the 3D tilt so it stays centered */
+    }
 }
 
 @media (max-width: 768px) {
@@ -2329,8 +2342,14 @@ a, .menu-icon, button {
 
     /* Stack the First Name/Last Name and Email/Phone side-by-side inputs */
     .input-group {
-        flex-direction: column;
-        gap: 15px; /* Even spacing between stacked inputs */
+        display: flex;
+        flex-direction: column !important;
+        width: 100%;
+    }
+
+    .input-group input {
+        width: 100% !important; /* Ensure they take full width of the card */
+        box-sizing: border-box;
     }
 
     .parallel-form input, 
