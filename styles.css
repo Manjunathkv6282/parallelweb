@@ -38,13 +38,14 @@ a, .menu-icon, button {
 
 .hero-section {
     position: relative;
-    height: 120vh;
+    height: 120vh; /* Changed from 120vh to 100vh for better mobile fit */
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 40px; /* This creates the "frame" effect around the video */
+    padding: 10px; /* Reduced base padding */
     box-sizing: border-box;
     background-color: white;
+    overflow: hidden;
 }
 
 .hero-section-about{
@@ -60,6 +61,7 @@ a, .menu-icon, button {
 /* The Video Wrapper with 25px Border Radius */
 .video-bg-wrapper {
     position: absolute;
+    inset: 10px;
     top: 10px; /* Spacing from screen edge */
     left: 10px;
     right: 10px;
@@ -156,9 +158,13 @@ a, .menu-icon, button {
 }
 
 .hero-container {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding-left: 160px;
+    flex-grow: 1; /* Pushes content to fill space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers text vertically */
+    padding: 0 10%; /* Percentage instead of 160px */
+    position: relative;
+    z-index: 10;
 }
 
 .est-text {
@@ -169,12 +175,55 @@ a, .menu-icon, button {
 }
 
 .hero-title {
-    font-size: 9rem;
-    line-height: 0.9;
+    font-size: clamp(2.5rem, 12vw, 8rem) !important;
+    line-height: 1; /* Slightly increased from 0.9 to prevent letters touching */
     font-weight: 800;
-    margin-bottom: 70px;
-    letter-spacing: -3px;
-    color: var(--white);
+    letter-spacing: -2px;
+    color: #ffffff;
+    word-wrap: break-word; /* Safety net */
+    max-width: 100%;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translate(-50%, 0);}
+    40% {transform: translate(-50%, -10px);}
+    60% {transform: translate(-50%, -5px);}
+}
+
+/* --- MOBILE SPECIFIC MEDIA QUERY --- */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 100vh;
+        padding: 5px;
+    }
+
+    .hero-nav {
+        padding: 20px;
+    }
+
+    .hero-container {
+        padding: 0 25px; /* Less horizontal padding on mobile */
+        text-align: left;
+    }
+
+    .hero-title {
+        letter-spacing: -1px;
+    }
+
+    .quote-link {
+        display: none; /* Keep it minimal on mobile as requested */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 3.2rem !important; /* Force a size that fits on iPhone screens */
+        letter-spacing: -1px;
+    }
+    
+    .hero-container {
+        padding: 0 20px; /* Standard mobile gutter */
+    }
 }
 
 /* Logo Container Styling */
