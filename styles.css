@@ -2310,26 +2310,34 @@ a, .menu-icon, button {
 
 /* --- RESPONSIVE CONTACT SECTION --- */
 
-/* --- RESPONSIVE FORM LOGIC --- */
-
 @media (max-width: 1024px) {
+    /* 1. Force the grid to a single column */
+    .contact-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 40px !important;
+        padding: 0 15px !important; /* Prevents edge-to-edge touching */
+    }
+
+    /* 2. Make the cards take full width */
+    .contact-info-column, 
     .contact-form-column {
-        width: 100%;
-        max-width: 650px; /* Center the form on tablets */
-        margin: 0 auto;
+        width: 100% !important;
+        max-width: 100% !important;
     }
 
-        .contact-grid {
-        grid-template-columns: 1fr !important; 
-        gap: 50px;
-    }
-
-    .contact-info-column {
-        text-align: center; /* Better look for mobile */
-    }
-
+    /* 3. Flatten the 3D tilt that is causing the overlap */
     .info-card-3d {
-        transform: none !important; /* Remove the 3D tilt so it stays centered */
+        transform: none !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* 4. Fix the form glass card width */
+    .form-glass-card {
+        width: 100% !important;
+        box-sizing: border-box;
+        margin-right: 0 !important;
     }
 }
 
@@ -2350,6 +2358,10 @@ a, .menu-icon, button {
     .input-group input {
         width: 100% !important; /* Ensure they take full width of the card */
         box-sizing: border-box;
+    }
+
+    input, textarea, select {
+        width: 100% !important;
     }
 
     .parallel-form input, 
