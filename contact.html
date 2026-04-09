@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParallelWeb | Modern Web Development</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+
+    <section class="hero-section-about">
+        <div class="video-bg-wrapper">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="Hero vid.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+
+        <nav class="hero-nav">
+            <div class="logo-container">
+                <img src="logo icon.png" alt="ParallelWeb Logo" class="brand-logo">
+            </div>
+            
+           <div class="nav-right">
+                <a href="#" class="quote-link">
+                    Get a Quote 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
+                </a>
+
+                <div class="menu-icon" id="menuTrigger" aria-label="Toggle Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 256 256">
+                        <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path>
+                    </svg>
+                </div>
+            </div>
+        </nav>
+
+    </section>
+
+    <section class="hero-master Contact-hero-bg">
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title-about">Contact us</h1>
+            
+            <nav class="breadcrumb">
+                <a href="index.html" class="crumb-link">Home</a>
+                <span class="crumb-separator">»</span>
+                <span class="crumb-current">CONTACT</span>
+            </nav>
+        </div>
+    </section>
+
+    <section class="contact-section-premium">
+        <div class="container">
+            <div class="contact-grid">
+                
+                <div class="contact-info-column reveal-on-scroll">
+                    <div class="section-tag">
+                        <span class="line"></span> CONTACT US
+                    </div>
+                    <h2 class="display-title">Let’s Start <br>Something <span>Great</span></h2>
+                    
+                    <div class="info-card-3d">
+                        <div class="info-block">
+                            <span class="info-label">Our Address</span>
+                            <p>2690 Hilton Street, Victoria, Canada</p>
+                        </div>
+                        <div class="info-block">
+                            <span class="info-label">Phone Number</span>
+                            <p>(+91) - 6282411525</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-column reveal-on-scroll">
+                    <div class="form-glass-card">
+                        <form class="parallel-form">
+                            <div class="input-group">
+                                <input type="text" placeholder="First Name*" required>
+                                <input type="text" placeholder="Last Name*" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="email" placeholder="Email Address*" required>
+                                <input type="tel" placeholder="Phone Number*" required>
+                            </div>
+                            <select class="custom-select">
+                                <option>Web Design</option>
+                                <option>Development</option>
+                                <option>Branding</option>
+                            </select>
+                            <textarea placeholder="Your Message*" rows="5"></textarea>
+                            
+                            <button type="submit" class="submit-btn-3d">
+                                <span>Submit Message</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="reveal-section-email">
+        <div class="reveal-container-email">
+            <div class="reveal-header-email reveal-element">
+                <h5>Get in Touch</h5>
+            </div>
+            
+            <div class="reveal-content-email reveal-element">
+                <a href="mailto:hello@parallelweb.com" class="mega-email">
+                    hello@parallelweb.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="uncode-footer reveal-element">
+        <div class="footer-main-grid">
+            <div class="footer-column brand-column">
+                <p>Bringing your brand's unique story to life, elevating its vision, and amplifying its voice across the digital landscape.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="blogs.html">Latest News</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Headquarter</h3>
+                <address>
+                    Birger Jarlsgatan<br>
+                    58A<br>
+                    114 29 Stockholm,<br>
+                    Sweden<br><br>
+                    <a href="tel:+4681234567">+46 8123 4567</a>
+                </address>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <span class="copyright">© 2026 ParallelWeb. All rights reserved</span>
+            <a href="#top" class="back-to-top">Back to top</a>
+        </div>
+    </footer>
+
+    <div class="menu-icon" id="menuTrigger" aria-label="Toggle Menu">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 256 256">
+        <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path>
+    </svg>
+</div>
+
+
+<div class="menu-icon" id="menuTrigger"></div>
+
+    <div class="full-menu-overlay" id="fullMenu">
+        
+        <button class="close-menu-btn" id="closeMenu" aria-label="Close Menu">
+            <span>CLOSE</span>
+            <div class="close-icon">
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+        </button>
+
+        <div class="menu-inner">
+            <div class="menu-nav-links">
+                <div class="menu-logo">
+                    <img src="logo icon.png" alt="Logo" class="brand-logo">
+                </div>
+                <nav class="massive-nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="blogs.html">Blogs</a>
+                    <a href="contact.html">Contact Us</a>
+                </nav>
+                <p class="menu-footer-text">© 2026 ParallelWeb Studio</p>
+            </div>
+
+            <div class="menu-grid">
+                <div class="m-card card-about">
+                    <span class="m-badge">About</span>
+                    <p>Building high-performance digital experiences for modern brands.</p>
+                    <a href="about.html" class="m-underline-link">Our Story</a>
+                </div>
+
+                <div class="m-card card-quote">
+                    <div class="quote-header">
+                        <img src="client.webp" alt="Client">
+                        <span class="m-badge">Testimonial</span>
+                    </div>
+                    <blockquote>“ Bespoke solutions tailored to our unique needs. “</blockquote>
+                </div>
+
+                <div class="m-card card-image" style="background-image: url('services.jpg');">
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="m-badge">Expertise</span>
+                        <h3>Tactical Consulting</h3>
+                    </div>
+                </div>
+
+                <div class="social-wrapper">
+                    <div class="m-card card-social"><i class="fab fa-instagram"></i></div>
+                    <div class="m-card card-social"><i class="fab fa-facebook-f"></i></div>
+                </div>
+
+                <a href="contact.html" class="m-card card-talk">
+                    <h2>Let's Talk ↗</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParallelWeb | Modern Web Development</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+
+    <section class="hero-section">
+        <div class="video-bg-wrapper">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="Hero vid.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+
+        <nav class="hero-nav">
+            <div class="logo-container">
+                <img src="logo icon.png" alt="ParallelWeb Logo" class="brand-logo">
+            </div>
+            
+           <div class="nav-right">
+                <a href="#" class="quote-link">
+                    Get a Quote 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
+                </a>
+
+                <div class="menu-icon" id="menuTrigger" aria-label="Toggle Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 256 256">
+                        <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path>
+                    </svg>
+                </div>
+            </div>
+        </nav>
+
+        <div class="hero-container">
+            <span class="est-text">Est. 2023</span>
+            <h1 class="hero-title">Make Brands<br>Stronger</h1>
+            <div class="scroll-arrow">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <section class="reveal-section">
+        <div class="reveal-container">
+            <div class="reveal-header reveal-element">
+                <h5>What We Do</h5>
+            </div>
+            
+            <div class="reveal-content reveal-element">
+                <p>Every campaign is meticulously tailored, combining analytical rigor with creative flair, to not just meet but exceed the unique needs and aspirations of your brand.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="horizontal-scroll-section">
+        <div class="sticky-wrapper">
+            <div class="cards-container">
+                <div class="project-card">
+                    <div class="card-inner">
+                        <img src="supreme.webp" alt="Supreme">
+                        <div class="hover-info">
+                            <span>Explore Case Study</span>
+                        </div>
+                    </div>
+                    <h5>Supreme [cite: 10]</h5>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-inner">
+                        <img src="download.webp" alt="Element">
+                        <div class="hover-info">
+                            <span>View Project</span>
+                        </div>
+                    </div>
+                    <h5>Element [cite: 11]</h5>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-inner">
+                        <img src="2.webp" alt="Curology">
+                        <div class="hover-info">
+                            <span>See Work</span>
+                        </div>
+                    </div>
+                    <h5>Curology [cite: 12]</h5>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-inner">
+                        <img src="supreme.webp" alt="Curology">
+                        <div class="hover-info">
+                            <span>See Work</span>
+                        </div>
+                    </div>
+                    <h5>Curology [cite: 12]</h5>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-inner">
+                        <img src="supreme.webp" alt="Curology">
+                        <div class="hover-info">
+                            <span>See Work</span>
+                        </div>
+                    </div>
+                    <h5>Curology [cite: 12]</h5>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-inner">
+                        <img src="supreme.webp" alt="Curology">
+                        <div class="hover-info">
+                            <span>See Work</span>
+                        </div>
+                    </div>
+                    <h5>Curology [cite: 12]</h5>
+                </div>
+            </div>
+            
+            <div class="scroll-progress-container">
+                <div class="scroll-progress-bar"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="innovation-section reveal-element">
+        <div class="innovation-container">
+            <div class="innovation-video">
+                <div class="video-thumbnail">
+                    <img src="VIDEO THUMBNAIL.webp" alt="Design Strategy">
+                    <button class="play-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="innovation-text">
+                <h2>Exceptional design meets strategy & innovation</h2>
+                <a href="#" class="pill-btn">About Us →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-overview reveal-element">
+        <div class="services-video-wrapper">
+            <video autoplay muted loop playsinline class="bg-video">
+                <source src="Hero vid.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div> 
+        </div>
+        <div class="services-container">
+            <div class="services-left">
+                <h2>Identify the best approach</h2>
+                <a href="#" class="white-pill-btn">Get a Quote <span class="arrow">→</span></a>
+            </div>
+
+            <div class="services-right">
+                <div class="service-column">
+                    <h3>WordPress Development</h3>
+                    <ul>
+                        <li>Custom Theme Development</li>
+                        <li>Speed & Performance Optimization</li>
+                        <li>Landing Page Design</li>
+                        <li>E-commerce Solutions</li>
+                    </ul>
+                </div>
+
+                <div class="service-column">
+                    <h3>Digital Strategy</h3>
+                    <ul>
+                        <li>SEO & Technical Audits</li>
+                        <li>Google Ads Management</li>
+                        <li>Brand Identity Design</li>
+                        <li>Website Maintenance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="logo-marquee-section reveal-element">
+        <div class="marquee-wrapper">
+            <div class="marquee-content">
+                <img src="amazon-logo.png" alt="Amazon">
+                <img src="dropbox-logo.png" alt="Dropbox">
+                <img src="slack-logo.png" alt="Slack">
+                <img src="yahoo-logo.png" alt="Yahoo">
+                <img src="paypal-logo.png" alt="PayPal">
+                <img src="netflix-logo.png" alt="Netflix">
+                <img src="google-logo.png" alt="Google">
+                
+                <img src="amazon-logo.png" alt="Amazon">
+                <img src="dropbox-logo.png" alt="Dropbox">
+                <img src="slack-logo.png" alt="Slack">
+                <img src="yahoo-logo.png" alt="Yahoo">
+                <img src="paypal-logo.png" alt="PayPal">
+                <img src="netflix-logo.png" alt="Netflix">
+                <img src="google-logo.png" alt="Google">
+            </div>
+        </div>
+    </section>
+
+    <section class="reveal-section">
+        <div class="reveal-container">
+            <div class="reveal-header reveal-element">
+                <h5>Latest News</h5>
+            </div>
+            
+            <div class="reveal-content reveal-element">
+                <p>From industry insights to company announcements,dive into the stories shaping
+                    our world and discover what's trending in marketing and design.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="news-carousel-section reveal-element">
+        <div class="news-header-row">
+            <div class="carousel-nav">
+                <button class="nav-btn prev" aria-label="Previous">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                </button>
+                <button class="nav-btn next" aria-label="Next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+            </div>
+        </div>
+        
+        <div class="news-container">
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="download.webp" alt="Taking a Break">
+                </div>
+                <div class="news-info">
+                    <h4>Taking a Break Boosts Productivity</h4>
+                    <span class="news-date">22.03.2025</span>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="2.webp" alt="Special Kudos">
+                </div>
+                <div class="news-info">
+                    <h4>Special Kudos for our latest design</h4>
+                    <span class="news-date">20.03.2025</span>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="supreme.webp" alt="JS Resources">
+                </div>
+                <div class="news-info">
+                    <h4>20 Best Resources for JavaScript</h4>
+                    <span class="news-date">18.03.2024</span>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="javascript.jpg" alt="JS Resources">
+                </div>
+                <div class="news-info">
+                    <h4>20 Best Resources for JavaScript</h4>
+                    <span class="news-date">18.03.2024</span>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="javascript.jpg" alt="JS Resources">
+                </div>
+                <div class="news-info">
+                    <h4>20 Best Resources for JavaScript</h4>
+                    <span class="news-date">18.03.2024</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section reveal-element">
+        <div class="faq-container">
+            <div class="faq-title-area">
+                <h2>FAQ's</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        <span>What makes your marketing services unique?</span>
+                        <span class="plus-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p>We combine analytical rigor with creative flair to ensure every campaign is meticulously tailored to your brand's unique aspirations.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        <span>How do you ensure the brand's voice is consistent?</span>
+                        <span class="plus-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p>Through strategic development and branding elements, we create a cohesive visual and verbal identity across all digital landscapes.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        <span>Can you help with both website design and SEO?</span>
+                        <span class="plus-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p>Yes. Our approach integrates e-commerce development with strategy and consulting to ensure your site is both beautiful and search-optimized.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        <span>How do you measure the success of your campaigns?</span>
+                        <span class="plus-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p>We use industry insights and company-specific KPIs to discover exactly how our stories are shaping your brand's growth.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        <span>How do you measure the success of your campaigns?</span>
+                        <span class="plus-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p>We use industry insights and company-specific KPIs to discover exactly how our stories are shaping your brand's growth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section reveal-element">
+        <div class="cta-card">
+            <div class="cta-video-wrapper">
+                <video autoplay muted loop playsinline class="cta-bg-video">
+                    <source src="Hero vid.mp4" type="video/mp4">
+                </video>
+                <div class="cta-video-overlay"></div>
+            </div>
+
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to elevate your<br>brand's potential?</h2>
+                
+                <a href="#" class="white-pill-btn">
+                    Get a Quote <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="reveal-section-email">
+        <div class="reveal-container-email">
+            <div class="reveal-header-email reveal-element">
+                <h5>Get in Touch</h5>
+            </div>
+            
+            <div class="reveal-content-email reveal-element">
+                <a href="mailto:hello@parallelweb.com" class="mega-email">
+                    hello@parallelweb.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="uncode-footer reveal-element">
+        <div class="footer-main-grid">
+            <div class="footer-column brand-column">
+                <p>Bringing your brand's unique story to life, elevating its vision, and amplifying its voice across the digital landscape.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="blogs.html">Latest News</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Headquarter</h3>
+                <address>
+                    Birger Jarlsgatan<br>
+                    58A<br>
+                    114 29 Stockholm,<br>
+                    Sweden<br><br>
+                    <a href="tel:+4681234567">+46 8123 4567</a>
+                </address>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <span class="copyright">© 2026 ParallelWeb. All rights reserved</span>
+            <a href="#top" class="back-to-top">Back to top</a>
+        </div>
+    </footer>
+
+    <div class="menu-icon" id="menuTrigger" aria-label="Toggle Menu">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 256 256">
+        <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path>
+    </svg>
+</div>
+
+
+<div class="menu-icon" id="menuTrigger"></div>
+
+    <div class="full-menu-overlay" id="fullMenu">
+        
+        <button class="close-menu-btn" id="closeMenu" aria-label="Close Menu">
+            <span>CLOSE</span>
+            <div class="close-icon">
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+        </button>
+
+        <div class="menu-inner">
+            <div class="menu-nav-links">
+                <div class="menu-logo">
+                    <img src="logo icon.png" alt="Logo" class="brand-logo">
+                </div>
+                <nav class="massive-nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="blogs.html">Blogs</a>
+                    <a href="contact.html">Contact Us</a>
+                </nav>
+                <p class="menu-footer-text">© 2026 ParallelWeb Studio</p>
+            </div>
+
+            <div class="menu-grid">
+                <div class="m-card card-about">
+                    <span class="m-badge">About</span>
+                    <p>Building high-performance digital experiences for modern brands.</p>
+                    <a href="about.html" class="m-underline-link">Our Story</a>
+                </div>
+
+                <div class="m-card card-quote">
+                    <div class="quote-header">
+                        <img src="client.webp" alt="Client">
+                        <span class="m-badge">Testimonial</span>
+                    </div>
+                    <blockquote>“ Bespoke solutions tailored to our unique needs. “</blockquote>
+                </div>
+
+                <div class="m-card card-image" style="background-image: url('services.jpg');">
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="m-badge">Expertise</span>
+                        <h3>Tactical Consulting</h3>
+                    </div>
+                </div>
+
+                <div class="social-wrapper">
+                    <div class="m-card card-social"><i class="fab fa-instagram"></i></div>
+                    <div class="m-card card-social"><i class="fab fa-facebook-f"></i></div>
+                </div>
+
+                <a href="contact.html" class="m-card card-talk">
+                    <h2>Let's Talk ↗</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

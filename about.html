@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParallelWeb | Modern Web Development</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+
+    <section class="hero-section-about">
+        <div class="video-bg-wrapper">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="Hero vid.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+
+        <nav class="hero-nav">
+            <div class="logo-container">
+                <img src="logo icon.png" alt="ParallelWeb Logo" class="brand-logo">
+            </div>
+            
+           <div class="nav-right">
+                <a href="#" class="quote-link">
+                    Get a Quote 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
+                </a>
+
+                <div class="menu-icon" id="menuTrigger" aria-label="Toggle Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 256 256">
+                        <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path>
+                    </svg>
+                </div>
+            </div>
+        </nav>
+
+    </section>
+
+    <section class="hero-master about-hero-bg">
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title-about">About</h1>
+            
+            <nav class="breadcrumb">
+                <a href="index.html" class="crumb-link">Home</a>
+                <span class="crumb-separator">»</span>
+                <span class="crumb-current">ABOUT</span>
+            </nav>
+        </div>
+    </section>
+
+    <section class="about-content-white">
+        <div class="container">
+            <div class="about-grid">
+                
+                <div class="about-images">
+                    <div class="img-large">
+                        <img src="about-img-3.jpg" alt="Agency Team">
+                    </div>
+                    <div class="img-small">
+                        <img src="about-img-2.jpg" alt="Collaboration">
+                    </div>
+                </div>
+
+                <div class="about-text">
+                    <div class="section-tag">
+                        <span class="line"></span> ABOUT COMPANY
+                    </div>
+                    <h2 class="section-title">Our Main Goal to Satisfy Local & Global Clients</h2>
+                    <p class="section-desc">
+                        Business tailored design, management & support services for modern agencies. We focus on delivering high-performance digital solutions.
+                    </p>
+
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+                                    <path d="M12 12L2.5 6.5"></path>
+                                    <path d="M12 12L12 22"></path>
+                                    <path d="M12 12l9.5-5.5"></path>
+                                    <circle cx="12" cy="12" r="2"></circle>
+                                </svg>
+                            </div>
+                            <h3>Professional Creative Team Members</h3>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="3" y1="9" x2="21" y2="9"></line>
+                                    <line x1="9" y1="21" x2="9" y2="9"></line>
+                                </svg>
+                            </div>
+                            <h3>Market Standard Service Delivery</h3>
+                        </div>
+                    </div>
+
+                    <div class="about-footer">
+                        <a href="#" class="btn-primary-blue">Get Started Now ↗</a>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="container">
+            <div class="process-header">
+                <h4 class="process-tag"><span class="blue-line"></span> WORK PROCESS</h4>
+                <div class="header-main">
+                    <span class="bg-text">STUDIO</span>
+                    <h2 class="main-title">QUALITY SERVICE FOR GROWTH <br> YOUR BRANDING IDENTITY</h2>
+                </div>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="step-num">01</div>
+                    <h3>Client Consultation</h3>
+                    <p>Autem vel eum repreh enderit eui in ea velit esse quame nihil molestiae</p>
+                    <a href="#" class="read-more">Read More »</a>
+                </div>
+
+                <div class="process-card">
+                    <div class="step-num">02</div>
+                    <h3>Research and Analysis</h3>
+                    <p>Autem vel eum repreh enderit eui in ea velit esse quame nihil molestiae</p>
+                    <a href="#" class="read-more">Read More »</a>
+                </div>
+
+                <div class="process-card">
+                    <div class="step-num">03</div>
+                    <h3>Project Revisions Launch</h3>
+                    <p>Autem vel eum repreh enderit eui in ea velit esse quame nihil molestiae</p>
+                    <a href="#" class="read-more">Read More »</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-marquee-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h2 class="stat-number">03<span>+</span></h2>
+                <p class="stat-label">Years of<br>Experience</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="stat-number">18<span>+</span></h2>
+                <p class="stat-label">Skilled<br>Performance</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="stat-number">32<span>+</span></h2>
+                <p class="stat-label">Visited<br>Conference</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="stat-number">1K<span>+</span></h2>
+                <p class="stat-label">Satisfied<br>Clients</p>
+            </div>
+        </div>
+
+        <div class="marquee-wrapper-about">
+            <div class="marquee-content-about">
+                <span>LATEST PROJECTS 
+                    <svg class="spinning-star" width="40" height="40" viewBox="0 0 256 256">
+                        <path fill="white" d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.07-31.19-51.07,31.19a16,16,0,0,1-23.84-17.34L66.6,153.74,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a16,16,0,0,1,29.44,0h0l23.21,55.36,59.46,5.15A16,16,0,0,1,234.5,114.38Z"></path>
+                    </svg> 
+                    WEB DEVELOPMENT 
+                </span>
+                <span>SEO STRATEGY 
+                    <svg class="spinning-star" width="40" height="40" viewBox="0 0 256 256">
+                        <path fill="white" d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.07-31.19-51.07,31.19a16,16,0,0,1-23.84-17.34L66.6,153.74,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a16,16,0,0,1,29.44,0h0l23.21,55.36,59.46,5.15A16,16,0,0,1,234.5,114.38Z"></path>
+                    </svg> 
+                    WEB DEVELOPMENT 
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-mission-section">
+        <div class="container">
+            <div class="mission-grid">
+                
+                <div class="mission-text-side">
+                    <div class="section-tag-blue">
+                        <span class="line"></span> ABOUT COMPANY
+                    </div>
+                    <h2 class="mission-title">Our Main Goal to Satisfied Local & Global Clients</h2>
+                    
+                   <div class="mission-tabs">
+                        <button class="tab-btn active" data-tab="mission">Our Mission</button>
+                        <button class="tab-btn" data-tab="vision">Our Vision</button>
+                        <button class="tab-btn" data-tab="goal">Our Goal</button>
+                    </div>
+
+                    <div class="tab-container">
+                        <div class="tab-content active" id="mission">
+                            <h3 class="content-subtitle">Digital Web Design Agency</h3>
+                            <p class="content-desc">At the core of a web design agency’s essence lies the artistry of visual storytelling and user experience creation.</p>
+                        </div>
+
+                        <div class="tab-content" id="vision">
+                            <h3 class="content-subtitle">Shaping the Future</h3>
+                            <p class="content-desc">Our vision is to be the leading force in digital transformation, helping brands navigate the evolving landscape with cutting-edge tech.</p>
+                        </div>
+
+                        <div class="tab-content" id="goal">
+                            <h3 class="content-subtitle">Measurable Success</h3>
+                            <p class="content-desc">Our primary goal is to deliver 10x ROI for our clients through strategic design and high-performance development.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mission-images-side">
+                    <div class="decoration-circle"></div>
+                    <div class="img-wrapper-top">
+                        <img src="about-img-3.jpg" alt="Team 1">
+                    </div>
+                    <div class="img-wrapper-bottom">
+                        <img src="about-img-2.jpg" alt="Team 2">
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="reveal-section-email">
+        <div class="reveal-container-email">
+            <div class="reveal-header-email reveal-element">
+                <h5>Get in Touch</h5>
+            </div>
+            
+            <div class="reveal-content-email reveal-element">
+                <a href="mailto:hello@parallelweb.com" class="mega-email">
+                    hello@parallelweb.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="uncode-footer reveal-element">
+        <div class="footer-main-grid">
+            <div class="footer-column brand-column">
+                <p>Bringing your brand's unique story to life, elevating its vision, and amplifying its voice across the digital landscape.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="blogs.html">Latest News</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Headquarter</h3>
+                <address>
+                    Birger Jarlsgatan<br>
+                    58A<br>
+                    114 29 Stockholm,<br>
+                    Sweden<br><br>
+                    <a href="tel:+4681234567">+46 8123 4567</a>
+                </address>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <span class="copyright">© 2026 ParallelWeb. All rights reserved</span>
+            <a href="#top" class="back-to-top">Back to top</a>
+        </div>
+    </footer>
+
+    <div class="menu-icon" id="menuTrigger" aria-label="Toggle Menu">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 256 256">
+        <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path>
+    </svg>
+</div>
+
+
+<div class="menu-icon" id="menuTrigger"></div>
+
+    <div class="full-menu-overlay" id="fullMenu">
+        
+        <button class="close-menu-btn" id="closeMenu" aria-label="Close Menu">
+            <span>CLOSE</span>
+            <div class="close-icon">
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+        </button>
+
+        <div class="menu-inner">
+            <div class="menu-nav-links">
+                <div class="menu-logo">
+                    <img src="logo icon.png" alt="Logo" class="brand-logo">
+                </div>
+                <nav class="massive-nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="blogs.html">Blogs</a>
+                    <a href="contact.html">Contact Us</a>
+                </nav>
+                <p class="menu-footer-text">© 2026 ParallelWeb Studio</p>
+            </div>
+
+            <div class="menu-grid">
+                <div class="m-card card-about">
+                    <span class="m-badge">About</span>
+                    <p>Building high-performance digital experiences for modern brands.</p>
+                    <a href="about.html" class="m-underline-link">Our Story</a>
+                </div>
+
+                <div class="m-card card-quote">
+                    <div class="quote-header">
+                        <img src="client.webp" alt="Client">
+                        <span class="m-badge">Testimonial</span>
+                    </div>
+                    <blockquote>“ Bespoke solutions tailored to our unique needs. “</blockquote>
+                </div>
+
+                <div class="m-card card-image" style="background-image: url('services.jpg');">
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="m-badge">Expertise</span>
+                        <h3>Tactical Consulting</h3>
+                    </div>
+                </div>
+
+                <div class="social-wrapper">
+                    <div class="m-card card-social"><i class="fab fa-instagram"></i></div>
+                    <div class="m-card card-social"><i class="fab fa-facebook-f"></i></div>
+                </div>
+
+                <a href="contact.html" class="m-card card-talk">
+                    <h2>Let's Talk ↗</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

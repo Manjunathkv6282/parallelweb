@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParallelWeb | Modern Web Development</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+
+    <section class="hero-section-about">
+        <div class="video-bg-wrapper">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="Hero vid.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+
+        <nav class="hero-nav">
+            <div class="logo-container">
+                <img src="logo icon.png" alt="ParallelWeb Logo" class="brand-logo">
+            </div>
+            
+           <div class="nav-right">
+                <a href="#" class="quote-link">
+                    Get a Quote 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
+                </a>
+
+                <div class="menu-icon" id="menuTrigger" aria-label="Toggle Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 256 256">
+                        <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path>
+                    </svg>
+                </div>
+            </div>
+        </nav>
+
+    </section>
+
+    <section class="hero-master services-hero-bg">
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title-about">Our Services</h1>
+            
+            <nav class="breadcrumb">
+                <a href="index.html" class="crumb-link">Home</a>
+                <span class="crumb-separator">»</span>
+                <span class="crumb-current">SERVICES</span>
+            </nav>
+        </div>
+    </section>
+
+    <section class="services-grid-section">
+        <div class="container">
+            <div class="services-grid">
+                
+                <div class="service-card reveal-on-scroll">
+                    <div class="service-header">
+                        <span class="slash">/</span> DESIGNING
+                    </div>
+                    <div class="service-3d-wrapper">
+                        <div class="service-img-container">
+                            <img src="designing.jpg" alt="Designing">
+                            
+                            <div class="overlay-glass">
+                                <div class="floating-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect><path d="M7 2v20M17 2v20M2 12h20"></path></svg>
+                                </div>
+                                <a href="contact.html" class="btn-3d-reveal">KNOW MORE ↗</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card reveal-on-scroll">
+                    <div class="service-header">
+                        <span class="slash">/</span> DEVELOPMENT
+                    </div>
+                    <div class="service-3d-wrapper">
+                        <div class="service-img-container">
+                            <img src="Development.jpg" alt="Designing">
+                            
+                            <div class="overlay-glass">
+                                <div class="floating-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect><path d="M7 2v20M17 2v20M2 12h20"></path></svg>
+                                </div>
+                                <a href="contact.html" class="btn-3d-reveal">KNOW MORE ↗</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card reveal-on-scroll">
+                    <div class="service-header">
+                        <span class="slash">/</span> SEO
+                    </div>
+                    <div class="service-3d-wrapper">
+                        <div class="service-img-container">
+                            <img src="seo.jpg" alt="Designing">
+                            
+                            <div class="overlay-glass">
+                                <div class="floating-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect><path d="M7 2v20M17 2v20M2 12h20"></path></svg>
+                                </div>
+                                <a href="contact.html" class="btn-3d-reveal">KNOW MORE ↗</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card reveal-on-scroll">
+                    <div class="service-header">
+                        <span class="slash">/</span> MARKETING
+                    </div>
+                    <div class="service-3d-wrapper">
+                        <div class="service-img-container">
+                            <img src="Marketing.jpg" alt="Designing">
+                            
+                            <div class="overlay-glass">
+                                <div class="floating-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect><path d="M7 2v20M17 2v20M2 12h20"></path></svg>
+                                </div>
+                                <a href="contact.html" class="btn-3d-reveal">KNOW MORE ↗</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card reveal-on-scroll">
+                    <div class="service-header">
+                        <span class="slash">/</span> BRANDING
+                    </div>
+                    <div class="service-3d-wrapper">
+                        <div class="service-img-container">
+                            <img src="Branding.jpg" alt="Designing">
+                            
+                            <div class="overlay-glass">
+                                <div class="floating-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect><path d="M7 2v20M17 2v20M2 12h20"></path></svg>
+                                </div>
+                                <a href="contact.html" class="btn-3d-reveal">KNOW MORE ↗</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card reveal-on-scroll">
+                    <div class="service-header">
+                        <span class="slash">/</span> OPTIMIZATION
+                    </div>
+                    <div class="service-3d-wrapper">
+                        <div class="service-img-container">
+                            <img src="Optimisation.jpg" alt="Designing">
+                            
+                            <div class="overlay-glass">
+                                <div class="floating-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect><path d="M7 2v20M17 2v20M2 12h20"></path></svg>
+                                </div>
+                                <a href="contact.html" class="btn-3d-reveal">KNOW MORE ↗</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+        </div>
+    </section>
+
+    <section class="stats-marquee-section">
+        <div class="marquee-wrapper-about">
+            <div class="marquee-content-about">
+                <span>LATEST PROJECTS 
+                    <svg class="spinning-star" width="40" height="40" viewBox="0 0 256 256">
+                        <path fill="white" d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.07-31.19-51.07,31.19a16,16,0,0,1-23.84-17.34L66.6,153.74,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a16,16,0,0,1,29.44,0h0l23.21,55.36,59.46,5.15A16,16,0,0,1,234.5,114.38Z"></path>
+                    </svg> 
+                    WEB DEVELOPMENT 
+                </span>
+                <span>SEO STRATEGY 
+                    <svg class="spinning-star" width="40" height="40" viewBox="0 0 256 256">
+                        <path fill="white" d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.07-31.19-51.07,31.19a16,16,0,0,1-23.84-17.34L66.6,153.74,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a16,16,0,0,1,29.44,0h0l23.21,55.36,59.46,5.15A16,16,0,0,1,234.5,114.38Z"></path>
+                    </svg> 
+                    WEB DEVELOPMENT 
+                </span>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="reveal-section-email">
+        <div class="reveal-container-email">
+            <div class="reveal-header-email reveal-element">
+                <h5>Get in Touch</h5>
+            </div>
+            
+            <div class="reveal-content-email reveal-element">
+                <a href="mailto:hello@parallelweb.com" class="mega-email">
+                    hello@parallelweb.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="uncode-footer reveal-element">
+        <div class="footer-main-grid">
+            <div class="footer-column brand-column">
+                <p>Bringing your brand's unique story to life, elevating its vision, and amplifying its voice across the digital landscape.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="blogs.html">Latest News</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Headquarter</h3>
+                <address>
+                    Birger Jarlsgatan<br>
+                    58A<br>
+                    114 29 Stockholm,<br>
+                    Sweden<br><br>
+                    <a href="tel:+4681234567">+46 8123 4567</a>
+                </address>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <span class="copyright">© 2026 ParallelWeb. All rights reserved</span>
+            <a href="#top" class="back-to-top">Back to top</a>
+        </div>
+    </footer>
+
+    <div class="menu-icon" id="menuTrigger" aria-label="Toggle Menu">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 256 256">
+        <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path>
+    </svg>
+</div>
+
+
+<div class="menu-icon" id="menuTrigger"></div>
+
+    <div class="full-menu-overlay" id="fullMenu">
+        
+        <button class="close-menu-btn" id="closeMenu" aria-label="Close Menu">
+            <span>CLOSE</span>
+            <div class="close-icon">
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+        </button>
+
+        <div class="menu-inner">
+            <div class="menu-nav-links">
+                <div class="menu-logo">
+                    <img src="logo icon.png" alt="Logo" class="brand-logo">
+                </div>
+                <nav class="massive-nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="blogs.html">Blogs</a>
+                    <a href="contact.html">Contact Us</a>
+                </nav>
+                <p class="menu-footer-text">© 2026 ParallelWeb Studio</p>
+            </div>
+
+            <div class="menu-grid">
+                <div class="m-card card-about">
+                    <span class="m-badge">About</span>
+                    <p>Building high-performance digital experiences for modern brands.</p>
+                    <a href="about.html" class="m-underline-link">Our Story</a>
+                </div>
+
+                <div class="m-card card-quote">
+                    <div class="quote-header">
+                        <img src="client.webp" alt="Client">
+                        <span class="m-badge">Testimonial</span>
+                    </div>
+                    <blockquote>“ Bespoke solutions tailored to our unique needs. “</blockquote>
+                </div>
+
+                <div class="m-card card-image" style="background-image: url('services.jpg');">
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="m-badge">Expertise</span>
+                        <h3>Tactical Consulting</h3>
+                    </div>
+                </div>
+
+                <div class="social-wrapper">
+                    <div class="m-card card-social"><i class="fab fa-instagram"></i></div>
+                    <div class="m-card card-social"><i class="fab fa-facebook-f"></i></div>
+                </div>
+
+                <a href="contact.html" class="m-card card-talk">
+                    <h2>Let's Talk ↗</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
