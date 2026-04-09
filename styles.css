@@ -2310,74 +2310,56 @@ a, .menu-icon, button {
 
 /* --- RESPONSIVE CONTACT SECTION --- */
 
-@media (max-width: 1100px) {
-    .contact-grid {
-        grid-template-columns: 1fr; /* Stack columns vertically */
-        gap: 60px;
-        max-width: 700px; /* Center the stack for better readability */
-    }
+/* --- RESPONSIVE FORM LOGIC --- */
 
-    .info-card-3d {
-        transform: rotateY(0deg); /* Flatten tilt on tablets to prevent clipping */
-        box-shadow: 0 20px 40px rgba(0,0,0,0.05); /* Simpler shadow for white bg */
-    }
-
-    .display-title {
-        text-align: center;
-        margin-bottom: 40px;
-    }
-
-    .tag-line {
-        justify-content: center;
-        display: flex;
-        align-items: center;
+@media (max-width: 1024px) {
+    .contact-form-column {
+        width: 100%;
+        max-width: 650px; /* Center the form on tablets */
+        margin: 0 auto;
     }
 }
 
 @media (max-width: 768px) {
-    .contact-section-premium {
-        padding: 80px 20px;
-        perspective: none; /* Disable perspective on small mobile to avoid tap issues */
-    }
-
-    .display-title {
-        font-size: 2.8rem; /* Scale down massive title */
-        letter-spacing: -1.5px;
-    }
-
     .form-glass-card {
-        padding: 30px 20px; /* More space for the form on mobile */
-        border-radius: 25px;
+        padding: 30px 20px; /* Reduce internal padding for more space */
+        border-radius: 25px; /* Softer corners for mobile */
+        perspective: none; /* Disable heavy 3D on mobile to prevent clipping */
     }
 
+    /* Stack the First Name/Last Name and Email/Phone side-by-side inputs */
     .input-group {
-        flex-direction: column; /* Stack First/Last name inputs */
-        gap: 15px;
+        flex-direction: column;
+        gap: 15px; /* Even spacing between stacked inputs */
     }
 
     .parallel-form input, 
     .parallel-form select, 
     .parallel-form textarea {
-        padding: 15px; /* Slightly smaller padding for smaller screens */
-    }
-
-    .info-label {
-        font-size: 1.2rem; /* Scale down the cyan labels */
+        padding: 16px; /* Slightly more compact */
+        font-size: 0.95rem;
     }
 
     .submit-btn-3d {
-        font-size: 1rem;
         padding: 18px;
+        font-size: 1rem;
+    }
+    
+    /* Ensure the 3D hover doesn't feel erratic on touch */
+    .form-glass-card:hover {
+        transform: translateY(-5px); /* Simple lift instead of tilt */
     }
 }
 
-/* Fix for very small devices */
-@media (max-width: 400px) {
-    .display-title {
-        font-size: 2.2rem;
+@media (max-width: 480px) {
+    .form-glass-card {
+        padding: 25px 15px;
+    }
+    
+    .submit-btn-3d span {
+        font-size: 0.9rem;
     }
 }
-
 
 /* Blogs page*/
 .blog-section {
