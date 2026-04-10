@@ -2,6 +2,16 @@
     --bg-dark: #0a0a0a;
     --white: #ffffff;
     --radius: 25px; /* Your requested radius */
+    --accent: #4f77ff;
+    --dark: #050507;
+}
+
+/* Remove default browser gaps */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    
 }
 
 /* Hide the default system cursor */
@@ -36,230 +46,361 @@ a, .menu-icon, button {
     cursor: none;
 }
 
-.hero-section {
+.modern-hero {
     position: relative;
-    height: 120vh; /* Changed from 120vh to 100vh for better mobile fit */
-    width: 100%;
+    height: 130vh; /* Kept your existing height */
+    /* Removed: background: var(--dark); */
+    background: #000; /* Fallback black while video loads */
     display: flex;
-    flex-direction: column;
-    padding: 10px; /* Reduced base padding */
-    box-sizing: border-box;
-    background-color: white;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
+    color: white;
 }
 
-.hero-section-about{
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 10px; /* This creates the "frame" effect around the video */
-    box-sizing: border-box;
-    background-color: white;
-}
-
-/* The Video Wrapper with 25px Border Radius */
-.video-bg-wrapper {
+.video-background {
     position: absolute;
-    inset: 10px;
-    top: 10px; /* Spacing from screen edge */
-    left: 10px;
-    right: 10px;
-    bottom: 20px;
-    border-radius: var(--radius);
-    overflow: hidden; /* Critical for rounding the video corners */
-    z-index: 1;
-}
-
-.hero-video {
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures video fills the space without stretching */
+    z-index: 1; /* Puts the video below content */
 }
 
-/* Dark tint so the "Make Brands Stronger" text pops [cite: 4] */
+/* 2. The video element itself */
+.video-tag {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Centers the video */
+    transform: translate(-50%, -50%);
+    
+    /* CRITICAL: Makes video fill container without stretching */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 3. The Overlay (for readability) */
 .video-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); 
-    z-index: 2;
+    background: rgba(0, 0, 0, 0.6); /* Adjust transparency (0.6) here */
+    z-index: 2; /* Sits on top of the video tag, but below content */
 }
 
-/* Positioning Content Above Video */
-.hero-nav, .hero-container {
-    position: relative;
-    z-index: 10;
+/* --- Ensure Existing Content Stays on Top --- */
+/* You must make sure your text/images are above the video (z-index: 1 & 2) */
+
+.hero-center,
+.hero-grid-container,
+.hero-bg-shapes {
+    position: relative; /* z-index requires position: relative */
+    z-index: 10; /* Anything higher than 2 */
 }
 
-.hero-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
+/* Reset and Base */
+.main-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: transparent; /* Force transparency */
+    padding: 30px 60px; /* Generous padding for the "floating" look */
+    box-sizing: border-box;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth transition */
 }
 
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 25px;
+/* --- 2. Scrolled State (Dark) --- */
+/* This class will be added via JavaScript */
+.main-navigation.scrolled {
+    /* 1. Use an RGBA color for transparency */
+    background: rgba(10, 10, 12, 0.7); 
+    
+    /* 2. The Glass Effect (Blur) */
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px); /* Support for Safari */
+    
+    /* 3. Your existing styles */
+    padding: 10px 70px; /* Kept slightly larger than 5px for better tap targets */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    
+    /* 4. Smooth Transition */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* CTA Link Styling  */
-.quote-link {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+/* Ensure Logo and Links are always readable */
+.nav-logo, .nav-link, .menu-link {
     transition: all 0.3s ease;
 }
 
-.quote-link svg {
-    transition: transform 0.3s ease;
+/* Optional: Shrink logo slightly on scroll */
+.main-navigation.scrolled .nav-logo {
+    height: 60px;
 }
 
-.quote-link:hover {
-    color: #00f2ff; /* ParallelWeb Cyan */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1800px;
+    margin: 0 auto;
 }
 
-.quote-link:hover svg {
-    transform: translate(2px, -2px); /* Subtle lift on hover */
+/* Logo Sizing */
+.nav-logo {
+    height: 62px; /* Small and professional */
+    width: auto;
 }
 
-/* Menu Icon Styling [cite: 40, 60] */
-.menu-icon {
-    cursor: pointer;
+/* Navigation Links */
+.nav-menu {
+    display: flex;
+    gap: 45px; /* Wide spacing between links */
+}
+
+.nav-link, .menu-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px; /* Smaller, modern agency size */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    transition: opacity 0.3s ease;
+    gap: 6px;
+    transition: color 0.3s ease;
 }
 
-.menu-icon:hover {
+.menu-link.active {
+    color: #4f77ff; /* Blue highlight from your image */
+}
+
+.chevron {
+    font-size: 10px;
     opacity: 0.7;
 }
 
-/* Make sure icons are responsive */
-@media (max-width: 768px) {
-    .hero-section-about{
-    width: 100%;
-}
-
-
-    .quote-link {
-        display: none; /* Hide text CTA on mobile to keep it minimal like the template */
-    }
-}
-
-.hero-container {
-    flex-grow: 1; /* Pushes content to fill space */
+/* The Circular Grid Button */
+.circle-grid-trigger {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Thin white circle */
+    background: transparent;
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centers text vertically */
-    padding: 0 10%; /* Percentage instead of 160px */
-    position: relative;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.circle-grid-trigger:hover {
+    border-color: #ffffff;
+    transform: scale(1.05);
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 4px);
+    gap: 3px;
+}
+
+.grid-layout span {
+    width: 4px;
+    height: 4px;
+    background: #ffffff;
+    border-radius: 1px;
+}
+
+/* Hero Typography */
+.hero-center {
+    text-align: center;
     z-index: 10;
 }
 
-.est-text {
-    font-size: 4rem;
+.hero-sub {
+    font-size: 2.5rem;
     font-weight: 300;
-    display: block;
-    color: var(--white);
+    margin-bottom: -10px;
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 12vw, 8rem) !important;
-    line-height: 1; /* Slightly increased from 0.9 to prevent letters touching */
+    font-size: clamp(3rem, 8vw, 7rem);
     font-weight: 800;
-    letter-spacing: -2px;
-    color: #ffffff;
-    word-wrap: break-word; /* Safety net */
-    max-width: 100%;
+    line-height: 0.9;
 }
 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translate(-50%, 0);}
-    40% {transform: translate(-50%, -10px);}
-    60% {transform: translate(-50%, -5px);}
+.highlight {
+    background:#00f2ff;
+    padding: 0 15px;
+    display: inline-block;
+    border-radius: 5px;
 }
 
-/* --- MOBILE SPECIFIC MEDIA QUERY --- */
-@media (max-width: 768px) {
-    .hero-section {
-        height: 100vh;
-        padding: 5px;
-    }
-
-    .hero-nav {
-        padding: 20px;
-    }
-
-    .hero-container {
-        padding: 0 25px; /* Less horizontal padding on mobile */
-        text-align: left;
-    }
-
-    .hero-title {
-        letter-spacing: -1px;
-    }
-
-    .quote-link {
-        display: none; /* Keep it minimal on mobile as requested */
-    }
+/* Floating Grid Images */
+.hero-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    width: 90%;
+    align-items: center;
 }
 
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 3.2rem !important; /* Force a size that fits on iPhone screens */
-        letter-spacing: -1px;
-    }
-    
-    .hero-container {
-        padding: 0 20px; /* Standard mobile gutter */
-    }
+.floating-img {
+    border-radius: 15px;
+    overflow: hidden;
+    position: absolute;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
 
-/* Logo Container Styling */
-.logo-container {
+.floating-img img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Positions for Left Side */
+.img-1 { width: 180px; height: 140px; left: 5%; top: 20%; }
+.img-2 { width: 220px; height: 160px; left: 8%; top: 50%; }
+.img-3 { width: 200px; height: 180px; left: 2%; top: 75%; }
+
+/* Large Image Right */
+.img-main {
+    width: 450px;
+    height: 550px;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Circle CTA Animation */
+.cta-circle-wrapper {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.cta-circle {
+    width: 100px; height: 100px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
     display: flex;
     align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.cta-inner {
+    width: 80px; height: 80px;
+    background: #00f2ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .hero-side-images { display: none; }
+    .hero-grid-container { grid-template-columns: 1fr; }
+}
+
+/* Fix: Header Layout & Positioning */
+/* --- Optimized Header Styles --- */
+.runok-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 25px 5%; /* Balanced horizontal/vertical spacing */
+    z-index: 10000;
+    background: transparent;
+    backdrop-filter: blur(8px); /* Subtle glassmorphism */
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Fix: Logo Scaling */
+.brand-logo {
+    height: 35px; /* Fixed height is key for professional branding */
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.brand-logo:hover {
+    transform: scale(1.08);
+}
+
+/* Fix: Navigation Spacing & Typography */
+.desktop-nav {
+    display: flex;
+    gap: 40px; /* Increased gap for breathability */
+}
+
+.nav-link {
+    color: #030202;
+    text-decoration: none;
+    font-size: 0.85rem; /* Slightly smaller for a premium feel */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px; /* Modern agency tracking */
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* ParallelWeb Cyan Accent */
+.nav-link.active, .nav-link:hover {
+    color: #00f2ff;
+}
+
+/* Modern Underline/Dot Indicator */
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: #00f2ff;
+    border-radius: 50%;
+}
+
+/* Grid Menu Icon (The 9-dot style) */
+.grid-dots {
+    display: grid;
+    grid-template-columns: repeat(3, 4px);
+    gap: 4px;
     cursor: pointer;
 }
 
-/* If using an Image */
-.brand-logo {
-    height: 50px; /* Adjust based on your logo proportions */
-    width: auto;
-    object-fit: contain;
+.grid-dots span {
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
-/* Ensure Nav-Right stays aligned with the logo */
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+.grid-menu-btn:hover .grid-dots span {
+    background: #00f2ff;
+    transform: scale(1.2);
 }
 
-.quote-link {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.3s ease;
-}
-
-.quote-link:hover {
-    border-color: #00f2ff; /* Hover effect using your brand color */
+/* Mobile: Hidden until trigger */
+@media (max-width: 992px) {
+    .desktop-nav {
+        display: none;
+    }
 }
 
 .reveal-section {

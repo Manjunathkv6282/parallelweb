@@ -14,44 +14,72 @@
 <body>
     <div class="custom-cursor"></div>
 
-    <section class="hero-section">
-        <div class="video-bg-wrapper">
-            <video autoplay muted loop playsinline class="hero-video">
-                <source src="Hero vid.mp4" type="video/mp4">
-            </video>
-            <div class="video-overlay"></div>
+    <header class="main-navigation">
+        <div class="header-container">
+            <div class="logo-box">
+                <img src="logo.png" alt="Runok Logo" class="nav-logo">
+            </div>
+
+            <!-- <nav class="nav-menu">
+                <a href="#" class="menu-link active">Home <span class="chevron">▾</span></a>
+                <a href="#" class="menu-link">Service <span class="chevron">▾</span></a>
+                <a href="#" class="menu-link">Pages <span class="chevron">▾</span></a>
+                <a href="#" class="nav-link">Blog <span class="chevron">▾</span></a>
+                <a href="#" class="nav-link">Shop <span class="chevron">▾</span></a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav> -->
+
+            <div class="menu-action">
+                <button class="circle-grid-trigger" id="menuTrigger">
+                    <div class="grid-layout">
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </header>
+
+<section class="modern-hero">
+    <div class="video-background">
+        <video autoplay loop muted playsinline class="video-tag">
+            <source src="Hero vid.mp4" type="video/mp4">
+        </video>
+        
+        <div class="video-overlay"></div>
+    </div>
+
+    <div class="hero-center">
         </div>
 
-        <nav class="hero-nav">
-            <div class="logo-container">
-                <img src="logo icon.png" alt="ParallelWeb Logo" class="brand-logo">
-            </div>
-            
-           <div class="nav-right">
-                <a href="#" class="quote-link">
-                    Get a Quote 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
-                </a>
+    <div class="hero-grid-container">
+        <div class="hero-side-images left">
+            <div class="floating-img img-1"><img src="designing.jpg" alt=""></div>
+            <div class="floating-img img-2"><img src="Development.jpg" alt=""></div>
+            <div class="floating-img img-3"><img src="download.webp" alt=""></div>
+        </div>
 
-                <div class="menu-icon" id="menuTrigger" aria-label="Toggle Menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 256 256">
-                        <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path>
-                    </svg>
+        <div class="hero-center">
+            <h5 class="hero-sub">Transforming</h5>
+            <h1 class="hero-title">
+                Visions <span class="highlight">into</span>
+                <br>Digital Reality
+            </h1>
+            <div class="cta-circle-wrapper">
+                <div class="cta-circle">
+                    <div class="cta-inner">
+                        <span class="arrow">↗</span>
+                    </div>
                 </div>
             </div>
-        </nav>
-
-        <div class="hero-container">
-            <span class="est-text">Est. 2023</span>
-            <h1 class="hero-title">Make Brands<br>Stronger</h1>
-            <div class="scroll-arrow">
-                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <polyline points="19 12 12 19 5 12"></polyline>
-                </svg>
-            </div>
         </div>
-    </section>
+
+        <div class="hero-side-images right">
+            <div class="floating-img img-main"><img src="about-img-2.jpg" alt=""></div>
+        </div>
+    </div>
+</section>
 
     <section class="reveal-section">
         <div class="reveal-container">

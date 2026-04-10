@@ -1,17 +1,74 @@
-// Register GSAP once at the top
+// 1. Register Plugins at the very top
 gsap.registerPlugin(ScrollTrigger);
 
+// 2. Wrap EVERYTHING in one DOMContentLoaded listener
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. GLOBAL ELEMENTS ---
+    // --- GLOBAL ELEMENTS ---
     const cursor = document.querySelector('.custom-cursor');
     const menu = document.querySelector('#fullMenu');
     const opener = document.querySelector('#menuTrigger');
     const closer = document.querySelector('#closeMenu');
+    const header = document.querySelector('.main-navigation'); // Target the class from your HTML
 
-    // --- 2. CUSTOM CURSOR LOGIC ---
+    // --- NEW: HEADER SCROLL LOGIC ---
+    // This fixes your non-working header. We use the class '.main-navigation'
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // --- NEW: HERO ENTRANCE ANIMATIONS ---
+    const tl = gsap.timeline();
+    tl.from(".nav-link", {
+        y: -20,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 1
+    })
+    .from(".hero-title", {
+        scale: 0.8,
+        opacity: 0,
+        duration: 1.2,
+        ease: "expo.out"
+    }, "-=0.5")
+    .from(".floating-img", {
+        y: 100,
+        opacity: 0,
+        stagger: 0.2,
+        duration: 1,
+        ease: "back.out(1.7)"
+    }, "-=1");
+
+    // --- NEW: FLOATING MOVEMENTS ---
+    gsap.to(".img-1, .img-3", {
+        y: -20,
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+    });
+
+    gsap.to(".img-2, .img-main", {
+        y: 20,
+        duration: 3.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+    });
+
+    gsap.to(".circle-ring", {
+        rotation: 360,
+        duration: 20,
+        repeat: -1,
+        ease: "none"
+    });
+
+    // --- EXISTING: CUSTOM CURSOR ---
     if (cursor) {
-        // Movement Logic
         document.addEventListener('mousemove', (e) => {
             window.requestAnimationFrame(() => {
                 cursor.style.left = e.clientX + 'px';
@@ -19,24 +76,18 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // EFFECT DELEGATION (The "Grow" Logic)
-        // Works for existing and dynamically added elements
         document.addEventListener('mouseover', (e) => {
             const target = e.target.closest('a, button, .menu-icon, .nav-item, .m-card, .tab-btn, .service-card, .btn-3d-reveal, .info-item, input, textarea, select');
-            if (target) {
-                cursor.classList.add('grow');
-            }
+            if (target) cursor.classList.add('grow');
         });
 
         document.addEventListener('mouseout', (e) => {
             const target = e.target.closest('a, button, .menu-icon, .nav-item, .m-card, .tab-btn, .service-card, .btn-3d-reveal, .info-item, input, textarea, select');
-            if (target) {
-                cursor.classList.remove('grow');
-            }
+            if (target) cursor.classList.remove('grow');
         });
     }
 
-    // --- 3. FULL SCREEN MENU LOGIC ---
+    // --- EXISTING: FULL SCREEN MENU ---
     if (opener && menu) {
         opener.addEventListener('click', (e) => {
             e.preventDefault();
@@ -52,59 +103,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 4. MISSION TABS LOGIC ---
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const target = button.getAttribute('data-tab');
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            tabContents.forEach(content => content.classList.remove('active'));
-            const targetEl = document.getElementById(target);
-            if(targetEl) targetEl.classList.add('active');
-        });
-    });
-
-    // --- 5. INTERSECTION OBSERVERS (REVEAL EFFECTS) ---
-    // Combined observer for Services, Contact Page, and General reveals
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                
-                // Unobserve items that only need to animate ONCE (Services & Contact)
-                if (entry.target.classList.contains('reveal-on-scroll') || 
-                    entry.target.classList.contains('reveal-from-bottom')) {
-                    revealObserver.unobserve(entry.target);
-                }
-            } else if (entry.target.classList.contains('reveal-element')) {
-                // Re-animate generic elements when scrolling back up/down
-                entry.target.classList.remove('active');
-            }
-        });
-    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
-
-    // Target all reveal types
-    document.querySelectorAll('.reveal-element, .reveal-on-scroll, .reveal-from-bottom').forEach(el => {
-        revealObserver.observe(el);
-    });
-
-    // --- 6. GSAP HORIZONTAL SCROLL ---
-    const container = document.querySelector(".cards-container");
+    // --- EXISTING: GSAP HORIZONTAL SCROLL ---
+    const cardsContainer = document.querySelector(".cards-container");
     const scrollSection = document.querySelector(".horizontal-scroll-section");
     
-    if (container && scrollSection) {
-        const getScrollAmount = () => -(container.scrollWidth - window.innerWidth);
+    if (cardsContainer && scrollSection) {
+        const getScrollAmount = () => -(cardsContainer.scrollWidth - window.innerWidth);
 
-        gsap.to(container, {
+        gsap.to(cardsContainer, {
             x: getScrollAmount,
             ease: "none",
             scrollTrigger: {
                 trigger: scrollSection,
                 start: "top top",
-                end: () => `+=${container.scrollWidth - window.innerWidth}`, 
+                end: () => `+=${cardsContainer.scrollWidth - window.innerWidth}`, 
                 scrub: 1,
                 pin: true,
                 anticipatePin: 1,
@@ -122,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 7. CAROUSEL & ACCORDION ---
+    // --- EXISTING: NEWS CAROUSEL & FAQ ---
     const slider = document.querySelector('.news-container');
     const nextBtn = document.querySelector('.nav-btn.next');
     const prevBtn = document.querySelector('.nav-btn.prev');
@@ -131,9 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const handleScroll = (direction) => {
             const card = slider.querySelector('.news-card');
             if (!card) return;
-            const scrollDistance = card.offsetWidth + 30; 
             slider.scrollBy({
-                left: direction === 'next' ? scrollDistance : -scrollDistance,
+                left: direction === 'next' ? (card.offsetWidth + 30) : -(card.offsetWidth + 30),
                 behavior: 'smooth'
             });
         };
@@ -152,4 +163,17 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+
+    // --- REVEAL OBSERVER ---
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            } else if (entry.target.classList.contains('reveal-element')) {
+                entry.target.classList.remove('active');
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal-element, .reveal-on-scroll').forEach(el => revealObserver.observe(el));
 });
