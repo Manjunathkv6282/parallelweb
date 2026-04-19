@@ -177,3 +177,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.reveal-element, .reveal-on-scroll').forEach(el => revealObserver.observe(el));
 });
+
+// --- MISSION TABS LOGIC ---
+const tabButtons = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
+
+tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // 1. Get the target ID from the data-tab attribute
+        const target = button.getAttribute('data-tab');
+
+        // 2. Remove 'active' class from all buttons and add to the clicked one
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        // 3. Remove 'active' class from all content panes
+        tabContents.forEach(content => {
+            content.classList.remove('active');
+            // Reset GSAP properties if you want a re-animation
+            gsap.set(content, { opacity: 0, y: 10, display: 'none' });
+        });
+
+        // 4. Show the target content with a GSAP fade-in effect
+        const targetEl = document.getElementById(target);
+        if (targetEl) {
+            targetEl.style.display = 'block';
+            gsap.to(targetEl, { 
+                opacity: 1, 
+                y: 0, 
+                duration: 0.5, 
+                ease: "power2.out" 
+            });
+            targetEl.classList.add('active');
+        }
+    });
+});
