@@ -1,5 +1,9 @@
 // 0. preloader home page 
 window.addEventListener('load', () => {
+    const video = document.querySelector('.video-tag');
+    if (video) {
+        video.play();
+    }
     const tl = gsap.timeline();
 
     // 1. Initial Logo Fade In
