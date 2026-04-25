@@ -19,6 +19,58 @@ body {
     cursor: none;
 }
 
+/* preloader home page */
+.loader-wrapper {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Split-screen sides */
+.loader-side {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: #0a0a0c;
+}
+.loader-side.left { left: 0; }
+.loader-side.right { right: 0; }
+
+.loader-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.loader-logo {
+    width: 60px;
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+}
+
+.loader-brand {
+    color: #fff;
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    font-weight: 300;
+    opacity: 0.5;
+}
+
+.loader-bar {
+    width: 0px;
+    height: 1px;
+    background: #00f2ff;
+    margin-bottom: 10px;
+}
+
 .custom-cursor {
     width: 20px;
     height: 20px;
@@ -1235,16 +1287,31 @@ a, .menu-icon, button {
 
 .uncode-footer {
     background: #ffffff;
-    padding: 100px 5% 40px;
-    color: #1a1a1a;
-    font-family: inherit; /* Matches your site font */
+    padding: 80px 5% 40px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.footer-logo .brand-logo {
+    height: 35px; /* Constrained height for a cleaner look */
+    width: auto;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.brand-column p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    max-width: 300px;
+    margin-bottom: 30px;
 }
 
 .footer-main-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 2fr 1fr 1fr 1.2fr; /* Adjusted for better weight */
+    gap: 80px; /* More "breathing room" */
     padding-bottom: 80px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* Column Headers */
@@ -1268,19 +1335,26 @@ a, .menu-icon, button {
 /* Social Icons Styling */
 .social-icons {
     display: flex;
-    gap: 20px;
-    margin-top: 30px;
+    gap: 15px;
 }
 
 .social-icons a {
-    color: #1a1a1a; /* Dark gray for footer visibility */
-    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    background: #f8f9fa; /* Light grey circle */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a1a1a;
+    text-decoration: none;
     transition: all 0.3s ease;
 }
 
 /* ParallelWeb Cyan Hover Effect */
 .social-icons a:hover {
-    color: #00f2ff; /* Your brand Cyan */
+    background: #00f2ff;
+    color: #000;
     transform: translateY(-5px);
 }
 
@@ -1338,8 +1412,12 @@ a, .menu-icon, button {
 }
 
 .back-to-top {
-    text-decoration: none;
-    color: #1a1a1a;
+    color: #888;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    transition: color 0.3s;
 }
 
 /* Responsive Handling */
@@ -1365,8 +1443,8 @@ a, .menu-icon, button {
 .full-menu-overlay {
     position: fixed;
     inset: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100dvh;
     background: #080808 !important;
     z-index: 99999;
     padding: 100px 5% 60px; /* More top padding for the logo/close area */
@@ -1375,6 +1453,8 @@ a, .menu-icon, button {
     visibility: hidden;
     overflow-y: auto; /* Allow scrolling if cards are tall */
     transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    -webkit-overflow-scrolling: touch;
+    
 }
 
 .full-menu-overlay.active {
@@ -1384,6 +1464,7 @@ a, .menu-icon, button {
 }
 
 .menu-inner {
+    position: relative;
     display: grid !important; 
     grid-template-columns: 1fr 1.5fr;
     gap: 80px;
@@ -1411,6 +1492,38 @@ a, .menu-icon, button {
     line-height: 1;
     letter-spacing: -3px;
     transition: 0.3s;
+}
+
+/* --- Menu Video Styling --- */
+.menu-video-bg {
+    /* Fixed keeps it stuck to the screen even if the page behind it is 5000px long */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+    /* Use dvh (Dynamic Viewport Height) to prevent mobile address bar jumping */
+    height: 100dvh; 
+    z-index: 1;
+    overflow: hidden;
+}
+
+.menu-bg-video {
+    width: 100%;
+    height: 100%;
+    /* This is the 'magic' property that prevents stretching/chopping */
+    object-fit: cover; 
+    object-position: center;
+}
+
+.menu-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradient to ensure the left-side navigation is extremely readable */
+    background: linear-gradient(to right, rgba(8, 8, 12, 0.95) 20%, rgba(8, 8, 12, 0.6) 100%);
+    z-index: 2;
 }
 
 .close-menu-btn {
@@ -1472,7 +1585,7 @@ a, .menu-icon, button {
 
 .card-talk { 
     grid-column: span 2; 
-    background: #4f77ff; 
+    background: #00f2ff; 
     text-align: center; 
     text-decoration: none;
 }
@@ -1554,6 +1667,11 @@ a, .menu-icon, button {
 /* contact Page Image */
 .Contact-hero-bg::before {
     background: url('assets/contact.jfif') center/cover no-repeat;
+}
+
+/* portfolio Page Image */
+.portfolio-hero-bg::before {
+    background: url('assets/portfolio\ bg.jpg') center/cover no-repeat;
 }
 
 /* --- SHARED CONTENT STYLES --- */
@@ -1827,6 +1945,11 @@ a, .menu-icon, button {
 @media (max-width: 768px) {
     .about-content-white {
         padding: 60px 20px;
+    }
+
+    .section-tag {
+        justify-content: flex-start; /* Aligns to the left on mobile */
+        padding-left: 5%; /* Optional: matches your site's side padding */
     }
 
     .section-title {
@@ -2576,6 +2699,23 @@ a, .menu-icon, button {
     transition: all 0.3s ease;
 }
 
+.custom-select {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05); /* Subtle glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    margin-bottom: 20px;
+    appearance: none; /* Removes default browser arrow */
+    cursor: pointer;
+}
+
+.custom-select option {
+    background: #080808; /* Match your site background */
+    color: #fff;
+}
+
 .parallel-form input:focus {
     background: #fff;
     box-shadow: 0 10px 30px rgba(79, 119, 255, 0.15);
@@ -2837,4 +2977,149 @@ a, .menu-icon, button {
 @media (max-width: 1024px) {
     .featured-post { grid-template-columns: 1fr; }
     .post-img-wrapper { height: 300px; }
+}
+
+
+/* --- PROJECT CARD STYLE --- */
+
+.portfolio-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px; /* Centered with breathing room */
+}
+
+/* Subtle accent line above the title */
+.header-line {
+    width: 40px;
+    height: 2px;
+    background: #00f2ff; /* Your signature Cyan */
+    margin: 0 auto 20px;
+}
+
+.portfolio-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: #1a1a1a; /* Or #ffffff if on your dark section */
+    letter-spacing: -1.5px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.portfolio-title span {
+    color: transparent;
+    -webkit-text-stroke: 1px #00f2ff; /* Premium "Outline" effect */
+}
+
+.portfolio-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* If the background is dark (Studio Black) */
+.dark-section .portfolio-title { color: #fff; }
+.dark-section .portfolio-title span { -webkit-text-stroke: 1px #fff; }
+.dark-section .portfolio-subtitle { color: #888; }
+
+.project-container-custom {
+    width: 98% !important;
+    max-width: 98% !important; /* Overrides Bootstrap max-width */
+    margin: 0 auto; /* Centers the 98% block */
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.project-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 20px; /* Big rounded corners */
+    padding: 20px; /* Space inside the border */
+    transition: all 0.4s ease;
+}
+
+.project-card:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    transform: translateY(-5px);
+}
+
+.project-image {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px; /* Rounded corners for image */
+    margin-bottom: 25px;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Zoom effect on hover */
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+/* --- CARD CONTENT & BUTTON --- */
+.project-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.text-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.text-content p {
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* The Arrow Button */
+.arrow-btn {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a1a1a;
+    font-size: 1.1rem; /* Arrow size */
+    transition: all 0.3s ease;
+    text-decoration: none;
+    flex-shrink: 0; /* Prevents button from squishing */
+}
+
+/* Button Hover Effect (Pink) */
+.project-card:hover .arrow-btn {
+    background-color: #00f2ff ;
+    border-color: #00f2ff ;
+    color: #fff;
+    transform: rotate(-45deg); /* Optional: Tilted arrow effect */
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .project-card {
+        padding: 15px;
+    }
+    
+    .text-content h3 {
+        font-size: 1.1rem;
+    }
 }

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParallelWeb | Premium Web Development & WordPress Agency in Kerala</title>
+    <meta name="title" content="ParallelWeb | Premium Web Development & WordPress Agency in Kerala">
+    <meta name="description" content="High-performance web development in Kannur. We specialize in minimal, custom-coded WordPress sites and SEO strategies for Kerala businesses.">
+
+    <link rel="icon" type="image/png" href="assets/logo icon.png">
+
+    <link rel="apple-touch-icon" href="assets/logo icon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://parallelweb.com/">
+    <meta property="og:title" content="ParallelWeb | Visions into Digital Reality">
+    <meta property="og:description" content="Premium, minimal, and high-performance web development based in Kannur, Kerala.">
+    <meta property="og:image" content="assets/logo.png">
+
+    <meta name="geo.region" content="IN-KL">
+    <meta name="geo.placename" content="Kannur">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+
+    <header class="main-navigation">
+        <div class="header-container">
+            <div class="logo-box">
+                <img src="assets/logo.png" alt="Runok Logo" class="nav-logo">
+            </div>
+
+            <!-- <nav class="nav-menu">
+                <a href="#" class="menu-link active">Home <span class="chevron">▾</span></a>
+                <a href="#" class="menu-link">Service <span class="chevron">▾</span></a>
+                <a href="#" class="menu-link">Pages <span class="chevron">▾</span></a>
+                <a href="#" class="nav-link">Blog <span class="chevron">▾</span></a>
+                <a href="#" class="nav-link">Shop <span class="chevron">▾</span></a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav> -->
+
+            <div class="menu-action">
+                <button class="circle-grid-trigger" id="menuTrigger">
+                    <div class="grid-layout">
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-master portfolio-hero-bg">
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title-about">Portfolio</h1>
+            
+            <nav class="breadcrumb">
+                <a href="index.html" class="crumb-link">Home</a>
+                <span class="crumb-separator">»</span>
+                <span class="crumb-current">Portfolio</span>
+            </nav>
+        </div>
+    </section>
+
+    <section class="project-grid-section py-5" id="portfolio">
+        <div class="container-fluid project-container-custom">
+            
+            <div class="portfolio-header mb-5">
+                <div class="header-line"></div>
+                <h2 class="portfolio-title">Featured <span>Projects</span></h2>
+                <p class="portfolio-subtitle">A curated selection of brands and businesses we've worked with.</p>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="project-card h-100">
+                        <div class="project-image">
+                            <img src="assets/DI.jpg " alt="Airbender Sports" style="background:#eee; min-height:200px; object-fit:cover;">
+                        </div>
+                        <div class="project-info">
+                            <div class="text-content">
+                                <h3>Digital Influence </h3>
+                                <p>digitalinfluence.co.in </p>
+                            </div>
+                            <a href="https://digitalinfluence.co.in" target="_blank" class="arrow-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="project-card h-100">
+                        <div class="project-image">
+                            <img src="assets/adze.jpg" alt="Adze Interiors" style="background:#eee; min-height:200px; object-fit:cover;">
+                        </div>
+                        <div class="project-info">
+                            <div class="text-content">
+                                <h3>Adze Interiors</h3>
+                                <p>adzeinteriors.com</p>
+                            </div>
+                            <a href="https://adzeinteriors.com" target="_blank" class="arrow-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="project-card h-100">
+                        <div class="project-image">
+                            <img src="assets/ace.jpg" alt="Ace Envirotech" style="background:#eee; min-height:200px; object-fit:cover;">
+                        </div>
+                        <div class="project-info">
+                            <div class="text-content">
+                                <h3>Ace Envirotech</h3>
+                                <p>aceenvirotech.in</p>
+                            </div>
+                            <a href="https://aceenvirotech.in" target="_blank" class="arrow-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="project-card h-100">
+                        <div class="project-image">
+                            <img src="assets/LG.jpg" alt="Little Grasshopper" style="background:#eee; min-height:200px; object-fit:cover;">
+                        </div>
+                        <div class="project-info">
+                            <div class="text-content">
+                                <h3>Little Grasshopper</h3>
+                                <p>littlegrasshopper.in</p>
+                            </div>
+                            <a href="https://littlegrasshopper.in" target="_blank" class="arrow-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="project-card h-100">
+                        <div class="project-image">
+                            <img src="assets/xtreme.jpg" alt="Xtreme Vacations" style="background:#eee; min-height:200px; object-fit:cover;">
+                        </div>
+                        <div class="project-info">
+                            <div class="text-content">
+                                <h3>Xtreme Vacations</h3>
+                                <p>xtremevacations.co.in</p>
+                            </div>
+                            <a href="https://xtremevacations.co.in" target="_blank" class="arrow-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="project-card h-100">
+                        <div class="project-image">
+                            <img src="assets/ragas.jpg" alt="Ragas" style="background:#eee; min-height:200px; object-fit:cover;">
+                        </div>
+                        <div class="project-info">
+                            <div class="text-content">
+                                <h3>Ragas</h3>
+                                <p>ragas.co.in</p>
+                            </div>
+                            <a href="https://ragas.co.in" target="_blank" class="arrow-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="project-card h-100">
+                        <div class="project-image">
+                            <img src="assets/vagami.jpg" alt="Vagmi Fincorp" style="background:#eee; min-height:200px; object-fit:cover;">
+                        </div>
+                        <div class="project-info">
+                            <div class="text-content">
+                                <h3>Vagmi Fincorp</h3>
+                                <p>vagmifincorp.in</p>
+                            </div>
+                            <a href="https://vagmifincorp.in" target="_blank" class="arrow-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="project-card h-100">
+                        <div class="project-image">
+                            <img src="assets/laxmaans.jpg" alt="Laxmaans" style="background:#eee; min-height:200px; object-fit:cover;">
+                        </div>
+                        <div class="project-info">
+                            <div class="text-content">
+                                <h3>Laxmaans</h3>
+                                <p>laxmaans.in</p>
+                            </div>
+                            <a href="https://laxmaans.in" target="_blank" class="arrow-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="project-card h-100">
+                        <div class="project-image">
+                            <img src="assets/airbenders.jpg" alt="Airbender Sports" style="background:#eee; min-height:200px; object-fit:cover;">
+                        </div>
+                        <div class="project-info">
+                            <div class="text-content">
+                                <h3>Airbender Sports</h3>
+                                <p>airbendersportsacademy.com</p>
+                            </div>
+                            <a href="https://airbendersportsacademy.com" target="_blank" class="arrow-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="project-card h-100">
+                        <div class="project-image">
+                            <img src="assets/uptown.jpg" alt="Airbender Sports" style="background:#eee; min-height:200px; object-fit:cover;">
+                        </div>
+                        <div class="project-info">
+                            <div class="text-content">
+                                <h3>uptownlaundry</h3>
+                                <p>uptownlaundry.co.in</p>
+                            </div>
+                            <a href="https://uptownlaundry.co.in" target="_blank" class="arrow-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="project-card h-100">
+                        <div class="project-image">
+                            <img src="assets/earthq.jpg" alt="Airbender Sports" style="background:#eee; min-height:200px; object-fit:cover;">
+                        </div>
+                        <div class="project-info">
+                            <div class="text-content">
+                                <h3>earthquotient</h3>
+                                <p>earthquotient.life</p>
+                            </div>
+                            <a href="https://earthquotient.life" target="_blank" class="arrow-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="project-card h-100">
+                        <div class="project-image">
+                            <img src="assets/YB.jpg" alt="Airbender Sports" style="background:#eee; min-height:200px; object-fit:cover;">
+                        </div>
+                        <div class="project-info">
+                            <div class="text-content">
+                                <h3>yellowbus photography</h3>
+                                <p>yellowbusphotography.com</p>
+                            </div>
+                            <a href="https://yellowbusphotography.com" target="_blank" class="arrow-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="project-card h-100">
+                        <div class="project-image">
+                            <img src="assets/marigolf.jpg" alt="Airbender Sports" style="background:#eee; min-height:200px; object-fit:cover;">
+                        </div>
+                        <div class="project-info">
+                            <div class="text-content">
+                                <h3>marigold hygiene</h3>
+                                <p>marigoldhygiene.com</p>
+                            </div>
+                            <a href="https://marigoldhygiene.com" target="_blank" class="arrow-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="project-card h-100">
+                        <div class="project-image">
+                            <img src="assets/taragonix.jpg" alt="Airbender Sports" style="background:#eee; min-height:200px; object-fit:cover;">
+                        </div>
+                        <div class="project-info">
+                            <div class="text-content">
+                                <h3>taragonix</h3>
+                                <p>taragonix.com</p>
+                            </div>
+                            <a href="https://taragonix.com" target="_blank" class="arrow-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="project-card h-100">
+                        <div class="project-image">
+                            <img src="assets/dwf.jpg" alt="Airbender Sports" style="background:#eee; min-height:200px; object-fit:cover;">
+                        </div>
+                        <div class="project-info">
+                            <div class="text-content">
+                                <h3>divinewisdom financial</h3>
+                                <p>divinewisdomfinancial.com</p>
+                            </div>
+                            <a href="https://divinewisdomfinancial.com" target="_blank" class="arrow-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="project-card h-100">
+                        <div class="project-image">
+                            <img src="assets/twb.jpg" alt="Airbender Sports" style="background:#eee; min-height:200px; object-fit:cover;">
+                        </div>
+                        <div class="project-info">
+                            <div class="text-content">
+                                <h3>Triveni Business School</h3>
+                                <p>trivenibusinessschool.com</p>
+                            </div>
+                            <a href="https://trivenibusinessschool.com/" target="_blank" class="arrow-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="cta-section reveal-element">
+        <div class="cta-card">
+            <div class="cta-video-wrapper">
+                <video autoplay muted loop playsinline class="cta-bg-video">
+                    <source src="assets/Hero vid.mp4" type="video/mp4">
+                </video>
+                <div class="cta-video-overlay"></div>
+            </div>
+
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to elevate your<br>brand's potential?</h2>
+                
+                <a href="#" class="white-pill-btn">
+                    Get a Quote <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="reveal-section-email">
+        <div class="reveal-container-email">
+            <div class="reveal-header-email reveal-element">
+                <h5>Get in Touch</h5>
+            </div>
+            
+            <div class="reveal-content-email reveal-element">
+                <a href="mailto:hello@parallelweb.com" class="mega-email">
+                    hello@parallelweb.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="uncode-footer reveal-element">
+        <div class="footer-main-grid">
+            <div class="footer-column brand-column">
+                <div class="footer-logo">
+                    <img src="assets/logo icon.png" alt="ParallelWeb Logo" class="brand-logo">
+                </div>
+                <p>Bringing your brand's unique story to life, elevating its vision, and amplifying its voice across the digital landscape.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="Portfolio.html">Portfolio</a></li>
+                    <li><a href="blogs.html">Latest News</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Headquarter</h3>
+                <address>
+                    Karnataka<br>
+                    Bangalore<br>
+                    560067<br><br>
+                    <a href="tel:+91 62824 11525">+91 62824 11525</a>
+                </address>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <span class="copyright">© 2026 ParallelWeb. All rights reserved</span>
+            <a href="#top" class="back-to-top">Back to top</a>
+        </div>
+    </footer>
+
+    <div class="menu-icon" id="menuTrigger" aria-label="Toggle Menu">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 256 256">
+        <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path>
+    </svg>
+</div>
+
+
+<div class="menu-icon" id="menuTrigger"></div>
+
+    <div class="full-menu-overlay" id="fullMenu">
+
+        <div class="menu-video-bg">
+            <video autoplay muted loop playsinline class="menu-bg-video">
+                <source src="assets/Hero vid.mp4" type="video/mp4">
+            </video>
+            <div class="menu-video-overlay"></div>
+        </div>
+        
+        <button class="close-menu-btn" id="closeMenu" aria-label="Close Menu">
+            <span>CLOSE</span>
+            <div class="close-icon">
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+        </button>
+
+        <div class="menu-inner">
+            <div class="menu-nav-links">
+                <div class="menu-logo">
+                    <img src="assets/logo icon.png" alt="Logo" class="brand-logo">
+                </div>
+                <nav class="massive-nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="blogs.html">Blogs</a>
+                    <a href="Portfolio.html">Portfolio</a>
+                    <a href="contact.html">Contact Us</a>
+                </nav>
+                <p class="menu-footer-text">© 2026 ParallelWeb Studio</p>
+            </div>
+
+            <div class="menu-grid">
+                <div class="m-card card-about">
+                    <span class="m-badge"><h3>About</h3></span>
+                    <p>Building high-performance digital experiences for modern brands.</p>
+                    <a href="about.html" class="m-underline-link">Our Story</a>
+                </div>
+
+                <div class="m-card card-quote">
+                    <div class="quote-header">
+                        <div class="quote-icon-wrapper">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <span class="m-badge"><h3>Testimonial</h3></span>
+                    </div>
+                    <blockquote>“ Bespoke solutions tailored to our unique needs. “</blockquote>
+                </div>
+
+                <div class="m-card card-image" style="background-image: url('services.jpg');">
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="m-badge">Expertise</span>
+                        <h3>Tactical Consulting</h3>
+                    </div>
+                </div>
+
+                <div class="social-wrapper">
+                    <a href="https://www.instagram.com/para.llelweb/" target="_blank" class="m-card card-social">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    
+                    <a href="https://www.facebook.com/your-profile" target="_blank" class="m-card card-social">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+
+                <a href="contact.html" class="m-card card-talk">
+                    <h2>Let's Talk <i class="fa-solid fa-arrow-right"></i> </h2>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -7,8 +7,13 @@
     <meta name="title" content="ParallelWeb Blog">
     <meta name="description" content="Stay updated with the latest in WordPress development, performance optimization, and local SEO strategies from ParallelWeb.">
 
+    <link rel="icon" type="image/png" href="assets/logo icon.png">
+
+    <link rel="apple-touch-icon" href="assets/logo icon.png">
+
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
@@ -74,7 +79,7 @@
                     <span class="post-date">April 08, 2026</span>
                     <h3 class="post-title">How AI is Reshaping WordPress Development in 2026</h3>
                     <p class="post-excerpt">Discover how we integrate neural networks into Elementor workflows to speed up client delivery by 40%...</p>
-                    <a href="#" class="read-more">Read Article ↗</a>
+                    <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
@@ -199,7 +204,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="Portfolio.html">Portfolio</a></li>
                     <li><a href="blogs.html">Latest News</a></li>
                     <li><a href="#">FAQ</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
@@ -219,11 +224,10 @@
             <div class="footer-column">
                 <h3>Headquarter</h3>
                 <address>
-                    Birger Jarlsgatan<br>
-                    58A<br>
-                    114 29 Stockholm,<br>
-                    Sweden<br><br>
-                    <a href="tel:+4681234567">+46 8123 4567</a>
+                    Karnataka<br>
+                    Bangalore<br>
+                    560067<br><br>
+                    <a href="tel:+91 62824 11525">+91 62824 11525</a>
                 </address>
             </div>
         </div>
@@ -244,6 +248,13 @@
 <div class="menu-icon" id="menuTrigger"></div>
 
     <div class="full-menu-overlay" id="fullMenu">
+
+        <div class="menu-video-bg">
+            <video autoplay muted loop playsinline class="menu-bg-video">
+                <source src="assets/Hero vid.mp4" type="video/mp4">
+            </video>
+            <div class="menu-video-overlay"></div>
+        </div>
         
         <button class="close-menu-btn" id="closeMenu" aria-label="Close Menu">
             <span>CLOSE</span>
@@ -263,6 +274,7 @@
                     <a href="about.html">About</a>
                     <a href="services.html">Services</a>
                     <a href="blogs.html">Blogs</a>
+                    <a href="Portfolio.html">Portfolio</a>
                     <a href="contact.html">Contact Us</a>
                 </nav>
                 <p class="menu-footer-text">© 2026 ParallelWeb Studio</p>
@@ -270,15 +282,17 @@
 
             <div class="menu-grid">
                 <div class="m-card card-about">
-                    <span class="m-badge">About</span>
+                    <span class="m-badge"><h3>About</h3></span>
                     <p>Building high-performance digital experiences for modern brands.</p>
                     <a href="about.html" class="m-underline-link">Our Story</a>
                 </div>
 
                 <div class="m-card card-quote">
                     <div class="quote-header">
-                        <img src="assets/client.webp" alt="Client">
-                        <span class="m-badge">Testimonial</span>
+                        <div class="quote-icon-wrapper">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <span class="m-badge"><h3>Testimonial</h3></span>
                     </div>
                     <blockquote>“ Bespoke solutions tailored to our unique needs. “</blockquote>
                 </div>
@@ -292,12 +306,17 @@
                 </div>
 
                 <div class="social-wrapper">
-                    <div class="m-card card-social"><i class="fab fa-instagram"></i></div>
-                    <div class="m-card card-social"><i class="fab fa-facebook-f"></i></div>
+                    <a href="https://www.instagram.com/para.llelweb/" target="_blank" class="m-card card-social">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    
+                    <a href="https://www.facebook.com/your-profile" target="_blank" class="m-card card-social">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
                 </div>
 
                 <a href="contact.html" class="m-card card-talk">
-                    <h2>Let's Talk ↗</h2>
+                    <h2>Let's Talk <i class="fa-solid fa-arrow-right"></i></h2>
                 </a>
             </div>
         </div>

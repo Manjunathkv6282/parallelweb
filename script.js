@@ -1,3 +1,51 @@
+// 0. preloader home page 
+window.addEventListener('load', () => {
+    const tl = gsap.timeline();
+
+    // 1. Initial Logo Fade In
+    tl.to(".loader-logo", {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        duration: 1,
+        ease: "power4.out"
+    })
+    // 2. Bar expansion
+    .to(".loader-bar", {
+        width: "150px",
+        duration: 1.5,
+        ease: "expo.inOut"
+    }, "-=0.5")
+    // 3. Elements disappear
+    .to(".loader-inner", {
+        opacity: 0,
+        y: -20,
+        duration: 0.6,
+        ease: "power2.in"
+    })
+    // 4. The "Amazing" Split Reveal
+    .to(".loader-side.left", {
+        xPercent: -100,
+        duration: 1.2,
+        ease: "expo.inOut"
+    }, "+=0.1")
+    .to(".loader-side.right", {
+        xPercent: 100,
+        duration: 1.2,
+        ease: "expo.inOut"
+    }, "<") // "<" starts at the same time as the left side
+    // 5. Hero Content Reveal
+    .from(".modern-hero h1", {
+        scale: 1.1,
+        filter: "blur(10px)",
+        opacity: 0,
+        duration: 2,
+        ease: "power2.out"
+    }, "-=0.8")
+    // 6. Cleanup
+    .set(".loader-wrapper", { display: "none" });
+});
+
 // 1. Register Plugins at the very top
 gsap.registerPlugin(ScrollTrigger);
 
