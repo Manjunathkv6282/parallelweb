@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Force removing the .html extension from the visible URL
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# Internally map the clean URL back to the actual .html file so the server can read it
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
