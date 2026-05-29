@@ -1,22 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <!-- Home Page -->
+
+  <!-- Main Home Page -->
   <url>
     <loc>https://parallelweb.dpdns.org/</loc>
-    <lastmod>2026-05-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-05-29T10:51:26+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.00</priority>
   </url>
 
-  <!-- Add your other pages below if you have them (e.g., About, Services, Contact) -->
-  <!-- Example:
+  <!-- About Page -->
   <url>
-    <loc>https://parallelweb.dpdns.org/services</loc>
-    <lastmod>2026-05-29</lastmod>
+    <loc>https://parallelweb.dpdns.org/about.html</loc>
+    <lastmod>2026-05-29T10:51:26+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url> 
-  -->
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Portfolio Page -->
+  <url>
+    <loc>https://parallelweb.dpdns.org/Portfolio.html</loc>
+    <lastmod>2026-05-29T10:51:26+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Services Page -->
+  <url>
+    <loc>https://parallelweb.dpdns.org/services.html</loc>
+    <lastmod>2026-05-29T10:51:26+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Blogs Hub -->
+  <url>
+    <loc>https://parallelweb.dpdns.org/blogs.html</loc>
+    <lastmod>2026-05-29T10:51:26+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://parallelweb.dpdns.org/contact.html</loc>
+    <lastmod>2026-05-29T10:51:26+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
 
 </urlset>
